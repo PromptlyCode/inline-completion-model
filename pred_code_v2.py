@@ -125,7 +125,7 @@ class PositionalEncoding(nn.Module):
         return self.dropout(x)
 
 # Training function
-def train_model(model, train_loader, criterion, optimizer, device, epochs=10):
+def train_model(model, train_loader, criterion, optimizer, device, epochs=30):
     model.train()
     for epoch in range(epochs):
         total_loss = 0
@@ -150,9 +150,10 @@ def train_model(model, train_loader, criterion, optimizer, device, epochs=10):
 
 # Code completion function
 def complete_code(model, tokenizer, input_code, max_length=50, temperature=0.8):
+    device = next(model.parameters()).device  # Get the device of the model
     model.eval()
     tokens = tokenizer.encode(input_code)
-    input_tensor = torch.tensor(tokens).unsqueeze(0)
+    input_tensor = torch.tensor(tokens).unsqueeze(0).to(device)  # Move tensor to the same device as model
     
     with torch.no_grad():
         for _ in range(max_length):
@@ -164,12 +165,14 @@ def complete_code(model, tokenizer, input_code, max_length=50, temperature=0.8):
             if next_token.item() == tokenizer.token2idx.get('<PAD>'):
                 break
     
-    return tokenizer.decode(input_tensor[0].tolist())
+    return tokenizer.decode(input_tensor[0].cpu().tolist())  # Move back to CPU for decoding
 
 # Main execution
 def main():
     # Setup
     device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+    print(f"Using device: {device}")
+    
     code_files = [str(p) for p in Path('/home/xlisp/EmacsPyPro/jim-emacs-fun-py').glob('**/*.py')]
     
     # Initialize tokenizer and create dataset
@@ -191,7 +194,7 @@ def main():
     torch.save(model.state_dict(), 'code_completion_model.pth')
     
     # Example usage
-    input_code = "def hello_world():"
+    input_code = "def get" #"def hello_world():"
     completed_code = complete_code(model, tokenizer, input_code)
     print(f"Input: {input_code}")
     print(f"Completed: {completed_code}")

@@ -1,8 +1,38 @@
 (inline-completion-model) ➜  inline-completion-model git:(main) ✗ prunp pred_code_v2.py
+Using device: cuda
 /home/xlisp/anaconda3/envs/inline-completion-model/lib/python3.11/site-packages/torch/nn/modules/transformer.py:379: UserWarning: enable_nested_tensor is True, but self.use_nested_tensor is False because encoder_layer.self_attn.batch_first was not True(use batch_first for better inference performance)
   warnings.warn(
-Epoch: 0, Batch: 0, Loss: 8.8857
-Epoch: 0, Batch: 100, Loss: 5.1218
-Epoch: 0, Average Loss: 5.3485
-Epoch: 1, Batch: 0, Loss: 5.1409
+Epoch: 0, Batch: 0, Loss: 8.7587
+Epoch: 0, Batch: 100, Loss: 5.2039
+Epoch: 0, Average Loss: 5.3191
+Epoch: 1, Batch: 0, Loss: 5.0368
+Epoch: 1, Batch: 100, Loss: 5.0928
+Epoch: 1, Average Loss: 5.1252
+Epoch: 2, Batch: 0, Loss: 5.1209
+Epoch: 2, Batch: 100, Loss: 5.1330
+Epoch: 2, Average Loss: 5.1062
+Epoch: 3, Batch: 0, Loss: 5.0368
+Epoch: 3, Batch: 100, Loss: 4.9834
+Epoch: 3, Average Loss: 5.0981
+Epoch: 4, Batch: 0, Loss: 5.1088
+Epoch: 4, Batch: 100, Loss: 5.0991
+Epoch: 4, Average Loss: 5.0898
+Epoch: 5, Batch: 0, Loss: 5.0344
+Epoch: 5, Batch: 100, Loss: 5.1091
+Epoch: 5, Average Loss: 5.0883
+Epoch: 6, Batch: 0, Loss: 5.1333
+Epoch: 6, Batch: 100, Loss: 5.0782
+Epoch: 6, Average Loss: 5.0861
+Epoch: 7, Batch: 0, Loss: 5.0271
+Epoch: 7, Batch: 100, Loss: 5.0659
+Epoch: 7, Average Loss: 5.0853
+Epoch: 8, Batch: 0, Loss: 5.1980
+Epoch: 8, Batch: 100, Loss: 5.0740
+Epoch: 8, Average Loss: 5.0842
+Epoch: 9, Batch: 0, Loss: 5.0815
+Epoch: 9, Batch: 100, Loss: 5.0569
+Epoch: 9, Average Loss: 5.0832
+Input: def hello_world():
+Completed: def <UNK> ( ) : , func_name ) 在 : 1 ) if , . , ] ... ( split @ ) = ) _ = ) != . ... ( : prompt staticmethod metadata : ( . llm = tool_names for ) = = ( "files" concatenate = = = , . \ ,
+(inline-completion-model) ➜  inline-completion-model git:(main) ✗
 
