@@ -218,7 +218,7 @@ def main():
     vocab = Vocab()
     
     # Process your code files and build vocabulary
-    code_files = ['/home/xlisp/EmacsPyPro/jim-emacs-fun-py']
+    code_files = ['/home/xlisp/EmacsPyPro/jim-emacs-fun-py/shell_gpt_test.py', '/home/xlisp/EmacsPyPro/jim-emacs-fun-py/sync_count_list.py', '/home/xlisp/EmacsPyPro/jim-emacs-fun-py/assistants_role_demo.py', '/home/xlisp/EmacsPyPro/jim-emacs-fun-py/graphviz_py_class.py', '/home/xlisp/EmacsPyPro/jim-emacs-fun-py/mymodule.py', '/home/xlisp/EmacsPyPro/jim-emacs-fun-py/graphviz_async_refs.py', '/home/xlisp/EmacsPyPro/jim-emacs-fun-py/base_lambdatest.py', '/home/xlisp/EmacsPyPro/jim-emacs-fun-py/parse_end_line_entire.py', '/home/xlisp/EmacsPyPro/jim-emacs-fun-py/ReAct_template.py', '/home/xlisp/EmacsPyPro/jim-emacs-fun-py/parse_single_py_fun_call_chain.py', '/home/xlisp/EmacsPyPro/jim-emacs-fun-py/function_calling_agent_important.py', '/home/xlisp/EmacsPyPro/jim-emacs-fun-py/remote_binding_server.py', '/home/xlisp/EmacsPyPro/jim-emacs-fun-py/deepbricks_cladue.py', '/home/xlisp/EmacsPyPro/jim-emacs-fun-py/async_shell2.py', '/home/xlisp/EmacsPyPro/jim-emacs-fun-py/test_async_await.py', '/home/xlisp/EmacsPyPro/jim-emacs-fun-py/parse_log_print_fun.py', '/home/xlisp/EmacsPyPro/jim-emacs-fun-py/graphviz_py_fun.py']
     dataset = CodeDataset(code_files, vocab, tokenizer)
     
     # Create model
