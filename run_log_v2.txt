@@ -36,3 +36,26 @@ Input: def hello_world():
 Completed: def <UNK> ( ) : , func_name ) 在 : 1 ) if , . , ] ... ( split @ ) = ) _ = ) != . ... ( : prompt staticmethod metadata : ( . llm = tool_names for ) = = ( "files" concatenate = = = , . \ ,
 (inline-completion-model) ➜  inline-completion-model git:(main) ✗
 
+## ----- Run epoch 30 -------
+...
+Epoch: 24, Batch: 100, Loss: 5.0117
+Epoch: 24, Average Loss: 5.0789
+Epoch: 25, Batch: 0, Loss: 5.0078
+Epoch: 25, Batch: 100, Loss: 5.0169
+Epoch: 25, Average Loss: 5.0794
+Epoch: 26, Batch: 0, Loss: 5.0439
+Epoch: 26, Batch: 100, Loss: 5.0732
+Epoch: 26, Average Loss: 5.0787
+Epoch: 27, Batch: 0, Loss: 5.2189
+Epoch: 27, Batch: 100, Loss: 5.0684
+Epoch: 27, Average Loss: 5.0789
+Epoch: 28, Batch: 0, Loss: 5.0638
+Epoch: 28, Batch: 100, Loss: 5.0815
+Epoch: 28, Average Loss: 5.0784
+Epoch: 29, Batch: 0, Loss: 5.0241
+Epoch: 29, Batch: 100, Loss: 5.0816
+Epoch: 29, Average Loss: 5.0786
+Input: def get
+Completed: def get created_at act . . , sorted : ... ) { self , , , = = , . = , , , . : , ) , ] __init__ = [ : = ] , , ( ( , functions2 , [ , of , , [ - , =
+(inline-completion-model) ➜  inline-completion-model git:(main)
+
