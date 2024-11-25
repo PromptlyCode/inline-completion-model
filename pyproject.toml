@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "inline-completion-model"
+version = "0.1.0"
+description = ""
+authors = ["xlisp <chanshunli@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+torch = "^2.5.1"
+transformers = "^4.46.3"
+faiss = "^1.5.3"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
