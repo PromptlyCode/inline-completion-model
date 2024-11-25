@@ -9,7 +9,7 @@ readme = "README.md"
 python = "^3.11"
 torch = "^2.5.1"
 transformers = "^4.46.3"
-faiss = "^1.5.3"
+faiss-cpu = "^1.9.0.post1"
 
 
 [build-system]
