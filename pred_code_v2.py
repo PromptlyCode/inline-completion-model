@@ -170,7 +170,7 @@ def complete_code(model, tokenizer, input_code, max_length=50, temperature=0.8):
 def main():
     # Setup
     device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
-    code_files = [str(p) for p in Path('./your_code_directory').glob('**/*.py')]
+    code_files = [str(p) for p in Path('/home/xlisp/EmacsPyPro/jim-emacs-fun-py').glob('**/*.py')]
     
     # Initialize tokenizer and create dataset
     tokenizer = CodeTokenizer()

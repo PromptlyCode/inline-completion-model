@@ -1,0 +1,8 @@
+(inline-completion-model) ➜  inline-completion-model git:(main) ✗ prunp pred_code_v2.py
+/home/xlisp/anaconda3/envs/inline-completion-model/lib/python3.11/site-packages/torch/nn/modules/transformer.py:379: UserWarning: enable_nested_tensor is True, but self.use_nested_tensor is False because encoder_layer.self_attn.batch_first was not True(use batch_first for better inference performance)
+  warnings.warn(
+Epoch: 0, Batch: 0, Loss: 8.8857
+Epoch: 0, Batch: 100, Loss: 5.1218
+Epoch: 0, Average Loss: 5.3485
+Epoch: 1, Batch: 0, Loss: 5.1409
+
