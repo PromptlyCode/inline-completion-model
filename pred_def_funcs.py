@@ -136,7 +136,7 @@ def main():
     device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
     
     # Initialize dataset and dataloader
-    dataset = CodeDataset('path_to_your_python_files')
+    dataset = CodeDataset('/home/xlisp/EmacsPyPro/jim-emacs-fun-py')
     train_loader = DataLoader(dataset, batch_size=32, shuffle=True)
     
     # Initialize model and training components
