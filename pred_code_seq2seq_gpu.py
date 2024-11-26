@@ -30,6 +30,7 @@ def parse_python_files(directory):
         try:
             with open(file_path, "r", encoding="utf-8") as f:
                 lines = f.readlines()
+                lines = [line for line in lines if not re.match(r'^\s*#', line) and not re.search(r'#', line)]
 
             # Pair consecutive lines as input-output for training
             for i in range(len(lines) - 1):
