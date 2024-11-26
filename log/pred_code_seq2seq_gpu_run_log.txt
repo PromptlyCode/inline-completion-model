@@ -1,7 +1,33 @@
 (inline-completion-model) ➜  inline-completion-model git:(main) ✗ prunp pred_code_seq2seq_gpu.py
+
 Using device: cuda
 Total pairs: 3596
-Epoch 1, Loss: 3.9772
-Epoch 2, Loss: 3.6759
-Epoch 3, Loss: 3.5961
+Epoch 1, Loss: 3.9888
+Epoch 2, Loss: 3.6701
+Epoch 3, Loss: 3.5879
+Epoch 4, Loss: 3.5193
+Epoch 5, Loss: 3.4626
+Epoch 6, Loss: 3.4219
+Epoch 7, Loss: 3.3953
+Epoch 8, Loss: 3.3577
+Epoch 9, Loss: 3.3262
+Epoch 10, Loss: 3.3062
+Epoch 11, Loss: 3.2887
+Epoch 12, Loss: 3.2680
+Epoch 13, Loss: 3.2394
+Epoch 14, Loss: 3.2329
+Epoch 15, Loss: 3.1853
+Epoch 16, Loss: 3.1751
+Epoch 17, Loss: 3.1653
+Epoch 18, Loss: 3.1433
+Epoch 19, Loss: 3.1352
+Epoch 20, Loss: 3.1084
+Epoch 21, Loss: 3.0834
+Epoch 22, Loss: 3.0687
+Epoch 23, Loss: 3.0640
+Epoch 24, Loss: 3.0546
+Epoch 25, Loss: 3.0267
+Epoch 26, Loss: 2.9993
+Epoch 27, Loss: 2.9844
+Epoch 28, Loss: 2.9670
 

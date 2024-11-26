@@ -128,7 +128,7 @@ criterion = nn.CrossEntropyLoss(ignore_index=0)  # Ignore padding value in loss
 optimizer = optim.Adam(model.parameters(), lr=0.001)
 
 # Step 4: Training Loop
-epochs = 10
+epochs = 50
 for epoch in range(epochs):
     total_loss = 0
     for input_seq, target_seq in dataloader:
