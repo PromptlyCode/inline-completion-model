@@ -1,0 +1,7 @@
+(inline-completion-model) ➜  inline-completion-model git:(main) ✗ prunp pred_code_seq2seq_gpu.py
+Using device: cuda
+Total pairs: 3596
+Epoch 1, Loss: 3.9772
+Epoch 2, Loss: 3.6759
+Epoch 3, Loss: 3.5961
+
