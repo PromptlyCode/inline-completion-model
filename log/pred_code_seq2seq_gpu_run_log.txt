@@ -30,4 +30,27 @@ Epoch 25, Loss: 3.0267
 Epoch 26, Loss: 2.9993
 Epoch 27, Loss: 2.9844
 Epoch 28, Loss: 2.9670
+Epoch 29, Loss: 2.9757
+Epoch 30, Loss: 2.9597
+Epoch 31, Loss: 2.9402
+Epoch 32, Loss: 2.9279
+Epoch 33, Loss: 2.9165
+Epoch 34, Loss: 2.8976
+Epoch 35, Loss: 2.8737
+Epoch 36, Loss: 2.8711
+Epoch 37, Loss: 2.8452
+Epoch 38, Loss: 2.8546
+Epoch 39, Loss: 2.8255
+Epoch 40, Loss: 2.8131
+Epoch 41, Loss: 2.7964
+Epoch 42, Loss: 2.7865
+Epoch 43, Loss: 2.7726
+Epoch 44, Loss: 2.7631
+Epoch 45, Loss: 2.7414
+Epoch 46, Loss: 2.7334
+Epoch 47, Loss: 2.7153
+Epoch 48, Loss: 2.7082
+Epoch 49, Loss: 2.6763
+Epoch 50, Loss: 2.6861
+Prediction: """"aagpaeagoonn.."pacionn.."pahinopnaeo,topnaetoe
 
