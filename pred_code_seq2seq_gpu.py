@@ -77,7 +77,7 @@ def collate_fn(batch):
     Custom collate function to pad input and target sequences in a batch.
     """
     input_seqs, target_seqs = zip(*batch)
-    
+
     # Pad sequences to the same length
     input_seqs_padded = pad_sequence(input_seqs, batch_first=True, padding_value=0)
     target_seqs_padded = pad_sequence(target_seqs, batch_first=True, padding_value=0)
@@ -106,7 +106,8 @@ class Seq2SeqModel(nn.Module):
         # Decoder
         decoder_input = input_seq[:, 0].unsqueeze(1)  # Start token
         outputs = []
-        for t in range(target_seq.size(1)):
+        max_len = target_seq.size(1) if target_seq is not None else 50  # Use max_len for inference
+        for t in range(max_len):
             decoder_embedded = self.embedding(decoder_input)
             output, (hidden, cell) = self.decoder(decoder_embedded, (hidden, cell))
             output = self.fc(output)
@@ -154,10 +155,9 @@ def predict(model, input_seq, max_len=50):
     model.eval()
     with torch.no_grad():
         input_seq = torch.tensor([[VOCAB[char] for char in input_seq]], dtype=torch.long).to(device)
-        outputs = model(input_seq)
-        predicted = outputs.argmax(2).squeeze(0)
+        outputs = model(input_seq, target_seq=None)  # Pass target_seq as None
+        predicted = outputs.argmax(2).squeeze(0).cpu().numpy()
         return ''.join([list(VOCAB.keys())[idx] for idx in predicted])
 
 test_input = "def func(x):"
 print("Prediction:", predict(model, test_input))
-
