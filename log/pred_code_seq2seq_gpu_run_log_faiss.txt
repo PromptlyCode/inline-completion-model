@@ -1,0 +1,78 @@
+
+(inline-completion-model) ➜  inline-completion-model git:(main) ✗ prunp pred_code_seq2seq_faiss.py
+Using device: cuda
+Total pairs: 2462
+Epoch 1, Loss: 3.8454
+Epoch 2, Loss: 3.4961
+Epoch 3, Loss: 3.4369
+Epoch 4, Loss: 3.3876
+Epoch 5, Loss: 3.3464
+Epoch 6, Loss: 3.2960
+Epoch 7, Loss: 3.2491
+Epoch 8, Loss: 3.2344
+Epoch 9, Loss: 3.2067
+Epoch 10, Loss: 3.1828
+Epoch 11, Loss: 3.1635
+Epoch 12, Loss: 3.1393
+Epoch 13, Loss: 3.1063
+Epoch 14, Loss: 3.0750
+Epoch 15, Loss: 3.0736
+Epoch 16, Loss: 3.0700
+Epoch 17, Loss: 3.0294
+Epoch 18, Loss: 3.0245
+Epoch 19, Loss: 3.0119
+Epoch 20, Loss: 3.0023
+Epoch 21, Loss: 2.9788
+Epoch 22, Loss: 2.9609
+...
+...
+
+Epoch 62, Loss: 2.4842
+Epoch 63, Loss: 2.4965
+Epoch 64, Loss: 2.4866
+Epoch 65, Loss: 2.4647
+Epoch 66, Loss: 2.4590
+Epoch 67, Loss: 2.4678
+Epoch 68, Loss: 2.4377
+Epoch 69, Loss: 2.4531
+Epoch 70, Loss: 2.4352
+Epoch 71, Loss: 2.4074
+Epoch 72, Loss: 2.4154
+Epoch 73, Loss: 2.3858
+Epoch 74, Loss: 2.3998
+Epoch 75, Loss: 2.3673
+Epoch 76, Loss: 2.3903
+Epoch 77, Loss: 2.3567
+Epoch 78, Loss: 2.3703
+Epoch 79, Loss: 2.3455
+Epoch 80, Loss: 2.3566
+Epoch 81, Loss: 2.3354
+Epoch 82, Loss: 2.3190
+Epoch 83, Loss: 2.3308
+Epoch 84, Loss: 2.3502
+Epoch 85, Loss: 2.3319
+Epoch 86, Loss: 2.3293
+Epoch 87, Loss: 2.2912
+Epoch 88, Loss: 2.3298
+Epoch 89, Loss: 2.2817
+Epoch 90, Loss: 2.2884
+Epoch 91, Loss: 2.2700
+Epoch 92, Loss: 2.2702
+Epoch 93, Loss: 2.2582
+Epoch 94, Loss: 2.2648
+Epoch 95, Loss: 2.1971
+Epoch 96, Loss: 2.2448
+Epoch 97, Loss: 2.2155
+Epoch 98, Loss: 2.2208
+Epoch 99, Loss: 2.2375
+Epoch 100, Loss: 2.2179
+/home/xlisp/Desktop/inline-completion-model/pred_code_seq2seq_faiss.py:182: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  model.load_state_dict(torch.load("seq2seq_model.pth"))
+Prediction: eth=ppe(dfaeitesaeteiettettettettettettettettettet
+(inline-completion-model) ➜  inline-completion-model git:(main) ✗
+(inline-completion-model) ➜  inline-completion-model git:(main) ✗ du -sh seq2seq_model.pth
+3.5M    seq2seq_model.pth
+(inline-completion-model) ➜  inline-completion-model git:(main) ✗ du -sh embeddings.index
+2.5M    embeddings.index
+(inline-completion-model) ➜  inline-completion-model git:(main) ✗
+
