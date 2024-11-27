@@ -37,14 +37,6 @@ def parse_python_files(directory):
 
     return input_texts, target_texts
 
-# Directory path
-directory_path = "/home/xlisp/EmacsPyPro/jim-emacs-fun-py"
-
-# Parse Python files
-input_texts, target_texts = parse_python_files(directory_path)
-print(f"Total pairs: {len(input_texts)}")
-
-# Step 2: Dataset and Custom Collate Function
 class CodeDataset(Dataset):
     def __init__(self, input_texts, target_texts):
         self.input_texts = input_texts
@@ -74,9 +66,4 @@ def collate_fn(batch):
     target_seqs_padded = pad_sequence(target_seqs, batch_first=True, padding_value=0)
 
     return input_seqs_padded, target_seqs_padded
-
-# Create Dataset and DataLoader
-dataset = CodeDataset(input_texts, target_texts)
-VOCAB = dataset.vocab
-dataloader = DataLoader(dataset, batch_size=32, shuffle=True, collate_fn=collate_fn)
 
