@@ -34,7 +34,7 @@ criterion = nn.CrossEntropyLoss(ignore_index=0)  # Ignore padding value in loss
 optimizer = optim.Adam(model.parameters(), lr=0.001)
 
 # Step 4: Training Loop
-epochs = 100
+epochs = 300
 for epoch in range(epochs):
     total_loss = 0
     for input_seq, target_seq in dataloader:
@@ -96,6 +96,6 @@ def predict(model, input_seq, max_len=50):
         predicted = outputs.argmax(2).squeeze(0).cpu().numpy()
         return ''.join([list(VOCAB.keys())[idx] for idx in predicted])
 
-test_input = "def func(x):"
+test_input = "def func" #(x):"
 print("Prediction:", predict(model, test_input))
 

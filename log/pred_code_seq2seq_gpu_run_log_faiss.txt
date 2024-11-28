@@ -76,3 +76,36 @@ Prediction: eth=ppe(dfaeitesaeteiettettettettettettettettettet
 2.5M    embeddings.index
 (inline-completion-model) ➜  inline-completion-model git:(main) ✗
 
+## ------------ run epoch 300 ------------------------------
+
+...
+
+Epoch 276, Loss: 1.2636
+Epoch 277, Loss: 1.2919
+Epoch 278, Loss: 1.2863
+Epoch 279, Loss: 1.2772
+Epoch 280, Loss: 1.3139
+Epoch 281, Loss: 1.2515
+Epoch 282, Loss: 1.3026
+Epoch 283, Loss: 1.2854
+Epoch 284, Loss: 1.2692
+Epoch 285, Loss: 1.2765
+Epoch 286, Loss: 1.2463
+Epoch 287, Loss: 1.2570
+Epoch 288, Loss: 1.2681
+Epoch 289, Loss: 1.2985
+Epoch 290, Loss: 1.2762
+Epoch 291, Loss: 1.2479
+Epoch 292, Loss: 1.2337
+Epoch 293, Loss: 1.2192
+Epoch 294, Loss: 1.2612
+Epoch 295, Loss: 1.1968
+Epoch 296, Loss: 1.2461
+Epoch 297, Loss: 1.2434
+Epoch 298, Loss: 1.2442
+Epoch 299, Loss: 1.2549
+Epoch 300, Loss: 1.2497
+/home/xlisp/Desktop/inline-completion-model/pred_code_seq2seq_faiss.py:84: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  model.load_state_dict(torch.load("seq2seq_model.pth"))
+Prediction: unubdo==={tne(lned()ueeto:n))):dremetrt):dr)))de))
+
