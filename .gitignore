@@ -1,3 +1,4 @@
 code_completion_model.pth
 embeddings.index
 seq2seq_model.pth
+__pycache__/

@@ -8,7 +8,7 @@ from torch.utils.data import Dataset, DataLoader
 from torch.nn.utils.rnn import pad_sequence
 import re
 from  dataloader import CodeDataset, parse_python_files, collate_fn
-from seq_model import Seq2SeqModel
+from seq2seq_model import Seq2SeqModel
 
 # Check for GPU
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")

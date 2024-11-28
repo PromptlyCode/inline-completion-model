@@ -1,4 +1,5 @@
 import torch.nn as nn
+import torch 
 
 class Seq2SeqModel(nn.Module):
     def __init__(self, vocab_size, embed_size, hidden_size):
