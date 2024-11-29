@@ -4,3 +4,7 @@ seq2seq_model.pth
 __pycache__/
 synthetic_data/news-commentary-v12.zh-en.en
 synthetic_data/news-commentary-v12.zh-en.zh
+best_translator.pth
+translator_checkpoint_epoch_10.pth
+translator_checkpoint_epoch_5.pth
+
