@@ -221,8 +221,8 @@ def collate_fn(batch):
 
 def train_model():
     # Load and preprocess data
-    english_data = open("../synthetic_data/news-commentary-v12.zh-en.en").readlines()
-    chinese_data = open("../synthetic_data/news-commentary-v12.zh-en.zh").readlines()
+    english_data = open("../synthetic_data/news-commentary-v12.zh-en.en").readlines()[1:3000]
+    chinese_data = open("../synthetic_data/news-commentary-v12.zh-en.zh").readlines()[1:3000]
 
     # Tokenize data
     english_tokenized = [sentence.strip().split() for sentence in english_data]
