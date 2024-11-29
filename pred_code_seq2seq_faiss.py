@@ -14,7 +14,7 @@ from seq2seq_model import Seq2SeqModel
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 print(f"Using device: {device}")
 
-directory_path = "/home/xlisp/EmacsPyPro/jim-emacs-fun-py"
+directory_path = "/home/xlisp/Desktop/code_dataset"
 
 # Parse Python files
 input_texts, target_texts = parse_python_files(directory_path)
@@ -96,6 +96,6 @@ def predict(model, input_seq, max_len=50):
         predicted = outputs.argmax(2).squeeze(0).cpu().numpy()
         return ''.join([list(VOCAB.keys())[idx] for idx in predicted])
 
-test_input = "def func" #(x):"
+test_input = "public long get" #"def func" #(x):"
 print("Prediction:", predict(model, test_input))
 

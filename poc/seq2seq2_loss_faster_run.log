@@ -168,3 +168,27 @@ Epoch [13/20], Batch [100/1562], Loss: 6.5922, Avg Loss: 6.5604
 Epoch [13/20], Batch [150/1562], Loss: 6.2504, Avg Loss: 6.5709
 Epoch [13/20], Batch [200/1562], Loss: 6.5264, Avg Loss: 6.5986
 
+### ---- test is very bad ... 
+In [3]: device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+
+In [4]: model, optimizer, eng_vocab, chi_vocab, epoch, loss = load_model('best_translator.pth', device)
+<ipython-input-2-c56496c046f5>:160: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  checkpoint = torch.load(filename, map_location=device)
+
+In [5]: translate_sentence(model, "hi", eng_vocab, chi_vocab, device)
+Out[5]: '<unk>的<unk>。'
+
+In [6]: translate_sentence(model, "Who are you", eng_vocab, chi_vocab, device)
+Out[6]: '在，的的的。'
+
+In [7]: translate_sentence(model, "ok", eng_vocab, chi_vocab, device)
+Out[7]: '<unk>的<unk>。'
+
+In [8]: translate_sentence(model, "Of course, the fall of the house of Lehman", eng_vocab, chi_vocab, device)
+Out[8]: '在，，，的的的的的。'
+
+In [9]: translate_sentence(model, "You actually have to implement the solution", eng_vocab, chi_vocab, device)
+Out[9]: '因此，在的的的的。'
+
+In [10]:
+
