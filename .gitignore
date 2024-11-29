@@ -2,3 +2,5 @@ code_completion_model.pth
 embeddings.index
 seq2seq_model.pth
 __pycache__/
+synthetic_data/news-commentary-v12.zh-en.en
+synthetic_data/news-commentary-v12.zh-en.zh
