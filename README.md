@@ -3,7 +3,7 @@
 
 ## Features
 
-- [ ]  Tab automatically complete code and predict code use vscode inline completion 
+- [ ]  Tab automatically complete code and predict code use vscode inline completion
 
 ## Init
 
@@ -25,7 +25,7 @@ Output Prediction: "return x * x"
 Input: "for i in range(n):"
 Target: "sum += i"
 
-(['def func(x):', 'x = x + 1', 'return x'], 
+(['def func(x):', 'x = x + 1', 'return x'],
 ['x = x + 1', 'return x', 'print(func(5))'])
 ```
 
@@ -40,3 +40,8 @@ Parse Python Files ─> Build Dataset ─> Train Model ─> Test Model
 
 ```
 
+## Achieve the target effect
+![](./demo/eg1.png)
+![](./demo/eg2.png)
+![](./demo/eg3.png)
+![](./demo/eg4.png)
