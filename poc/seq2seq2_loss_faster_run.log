@@ -1,3 +1,7 @@
+(base) ➜  poc git:(main) ✗ du -sh best_translator.pth 
+386M	best_translator.pth
+(base) ➜  poc git:(main) ✗
+
 (inline-completion-model) ➜  poc git:(main) ✗ prunp seq2seq2_loss_faster.py
 Building prefix dict from the default dictionary ...
 Loading model from cache /tmp/jieba.cache
@@ -49,10 +53,44 @@ Epoch [2/20], Batch [250/1562], Loss: 7.2544, Avg Loss: 7.1582
 Epoch [2/20], Batch [300/1562], Loss: 7.0413, Avg Loss: 7.1573
 Epoch [2/20], Batch [350/1562], Loss: 7.1976, Avg Loss: 7.1361
 Epoch [2/20], Batch [400/1562], Loss: 7.1731, Avg Loss: 7.1504
-
-...
-
-(base) ➜  poc git:(main) ✗ du -sh best_translator.pth 
-386M	best_translator.pth
-(base) ➜  poc git:(main) ✗
+Epoch [2/20], Batch [450/1562], Loss: 7.2324, Avg Loss: 7.1365
+Epoch [2/20], Batch [500/1562], Loss: 7.1592, Avg Loss: 7.1410
+Epoch [2/20], Batch [550/1562], Loss: 7.2080, Avg Loss: 7.1528
+Epoch [2/20], Batch [600/1562], Loss: 7.0708, Avg Loss: 7.1411
+Epoch [2/20], Batch [650/1562], Loss: 7.0365, Avg Loss: 7.1274
+Epoch [2/20], Batch [700/1562], Loss: 7.0481, Avg Loss: 7.1069
+Epoch [2/20], Batch [750/1562], Loss: 7.0272, Avg Loss: 7.1149
+Epoch [2/20], Batch [800/1562], Loss: 7.1781, Avg Loss: 7.1026
+Epoch [2/20], Batch [850/1562], Loss: 7.1809, Avg Loss: 7.1242
+Epoch [2/20], Batch [900/1562], Loss: 6.9973, Avg Loss: 7.1086
+Epoch [2/20], Batch [950/1562], Loss: 7.0742, Avg Loss: 7.1275
+Epoch [2/20], Batch [1000/1562], Loss: 7.0563, Avg Loss: 7.1322
+Epoch [2/20], Batch [1050/1562], Loss: 7.0766, Avg Loss: 7.0863
+Epoch [2/20], Batch [1100/1562], Loss: 7.2784, Avg Loss: 7.0715
+Epoch [2/20], Batch [1150/1562], Loss: 7.1199, Avg Loss: 7.0947
+Epoch [2/20], Batch [1200/1562], Loss: 7.1529, Avg Loss: 7.1247
+Epoch [2/20], Batch [1250/1562], Loss: 7.0954, Avg Loss: 7.0741
+Epoch [2/20], Batch [1300/1562], Loss: 7.0230, Avg Loss: 7.0822
+Epoch [2/20], Batch [1350/1562], Loss: 6.9680, Avg Loss: 7.0534
+Epoch [2/20], Batch [1400/1562], Loss: 7.0573, Avg Loss: 7.0729
+Epoch [2/20], Batch [1450/1562], Loss: 7.0592, Avg Loss: 7.0721
+Epoch [2/20], Batch [1500/1562], Loss: 7.0226, Avg Loss: 7.0524
+Epoch [2/20], Batch [1550/1562], Loss: 6.9905, Avg Loss: 7.0776
+Epoch: 2, Average Loss: 7.1184
+Model saved to best_translator.pth
+New best model saved with loss: 7.1184
+Epoch [3/20], Batch [0/1562], Loss: 6.9227, Avg Loss: 6.9227
+Epoch [3/20], Batch [50/1562], Loss: 7.0949, Avg Loss: 7.0242
+Epoch [3/20], Batch [100/1562], Loss: 7.0032, Avg Loss: 7.0364
+Epoch [3/20], Batch [150/1562], Loss: 6.9491, Avg Loss: 7.0231
+Epoch [3/20], Batch [200/1562], Loss: 6.9764, Avg Loss: 7.0312
+Epoch [3/20], Batch [250/1562], Loss: 6.8470, Avg Loss: 7.0392
+Epoch [3/20], Batch [300/1562], Loss: 6.8656, Avg Loss: 7.0155
+Epoch [3/20], Batch [350/1562], Loss: 7.0722, Avg Loss: 7.0095
+Epoch [3/20], Batch [400/1562], Loss: 7.2003, Avg Loss: 7.0113
+Epoch [3/20], Batch [450/1562], Loss: 6.9705, Avg Loss: 7.0094
+Epoch [3/20], Batch [500/1562], Loss: 6.8672, Avg Loss: 7.0195
+Epoch [3/20], Batch [550/1562], Loss: 6.7716, Avg Loss: 6.9956
+Epoch [3/20], Batch [600/1562], Loss: 7.0181, Avg Loss: 7.0214
+... ...
 
