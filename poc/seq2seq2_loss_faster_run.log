@@ -1,0 +1,58 @@
+(inline-completion-model) ➜  poc git:(main) ✗ prunp seq2seq2_loss_faster.py
+Building prefix dict from the default dictionary ...
+Loading model from cache /tmp/jieba.cache
+Loading model cost 0.807 seconds.
+Prefix dict has been built successfully.
+/home/xlisp/anaconda3/envs/inline-completion-model/lib/python3.11/site-packages/torch/optim/lr_scheduler.py:62: UserWarning: The verbose parameter is deprecated. Please use get_last_lr() to access the learning rate.
+  warnings.warn(
+Epoch [1/20], Batch [0/1562], Loss: 10.4329, Avg Loss: 10.4329
+Epoch [1/20], Batch [50/1562], Loss: 7.7123, Avg Loss: 8.1734
+Epoch [1/20], Batch [100/1562], Loss: 7.5982, Avg Loss: 7.6324
+Epoch [1/20], Batch [150/1562], Loss: 7.5850, Avg Loss: 7.5793
+Epoch [1/20], Batch [200/1562], Loss: 7.4222, Avg Loss: 7.5482
+Epoch [1/20], Batch [250/1562], Loss: 7.4220, Avg Loss: 7.5166
+Epoch [1/20], Batch [300/1562], Loss: 7.5148, Avg Loss: 7.4794
+Epoch [1/20], Batch [350/1562], Loss: 7.4495, Avg Loss: 7.4678
+Epoch [1/20], Batch [400/1562], Loss: 7.5150, Avg Loss: 7.4347
+Epoch [1/20], Batch [450/1562], Loss: 7.4333, Avg Loss: 7.4238
+Epoch [1/20], Batch [500/1562], Loss: 7.4033, Avg Loss: 7.4233
+Epoch [1/20], Batch [550/1562], Loss: 7.3593, Avg Loss: 7.3910
+Epoch [1/20], Batch [600/1562], Loss: 7.4481, Avg Loss: 7.3767
+Epoch [1/20], Batch [650/1562], Loss: 7.3853, Avg Loss: 7.3792
+Epoch [1/20], Batch [700/1562], Loss: 7.3144, Avg Loss: 7.3813
+Epoch [1/20], Batch [750/1562], Loss: 7.3315, Avg Loss: 7.3444
+Epoch [1/20], Batch [800/1562], Loss: 7.2417, Avg Loss: 7.3364
+Epoch [1/20], Batch [850/1562], Loss: 7.3738, Avg Loss: 7.3411
+Epoch [1/20], Batch [900/1562], Loss: 7.2536, Avg Loss: 7.3235
+Epoch [1/20], Batch [950/1562], Loss: 7.3010, Avg Loss: 7.3067
+Epoch [1/20], Batch [1000/1562], Loss: 7.3853, Avg Loss: 7.2944
+Epoch [1/20], Batch [1050/1562], Loss: 7.0715, Avg Loss: 7.2843
+Epoch [1/20], Batch [1100/1562], Loss: 7.2385, Avg Loss: 7.2679
+Epoch [1/20], Batch [1150/1562], Loss: 7.3661, Avg Loss: 7.2856
+Epoch [1/20], Batch [1200/1562], Loss: 7.2997, Avg Loss: 7.2573
+Epoch [1/20], Batch [1250/1562], Loss: 7.3177, Avg Loss: 7.2463
+Epoch [1/20], Batch [1300/1562], Loss: 7.1893, Avg Loss: 7.2334
+Epoch [1/20], Batch [1350/1562], Loss: 7.1841, Avg Loss: 7.2535
+Epoch [1/20], Batch [1400/1562], Loss: 7.2610, Avg Loss: 7.2279
+Epoch [1/20], Batch [1450/1562], Loss: 7.2292, Avg Loss: 7.2158
+Epoch [1/20], Batch [1500/1562], Loss: 7.2343, Avg Loss: 7.2256
+Epoch [1/20], Batch [1550/1562], Loss: 7.2202, Avg Loss: 7.1930
+Epoch: 1, Average Loss: 7.3831
+Model saved to best_translator.pth
+New best model saved with loss: 7.3831
+Epoch [2/20], Batch [0/1562], Loss: 7.1694, Avg Loss: 7.1694
+Epoch [2/20], Batch [50/1562], Loss: 7.2463, Avg Loss: 7.1641
+Epoch [2/20], Batch [100/1562], Loss: 7.1279, Avg Loss: 7.1828
+Epoch [2/20], Batch [150/1562], Loss: 7.3905, Avg Loss: 7.1749
+Epoch [2/20], Batch [200/1562], Loss: 7.2100, Avg Loss: 7.1723
+Epoch [2/20], Batch [250/1562], Loss: 7.2544, Avg Loss: 7.1582
+Epoch [2/20], Batch [300/1562], Loss: 7.0413, Avg Loss: 7.1573
+Epoch [2/20], Batch [350/1562], Loss: 7.1976, Avg Loss: 7.1361
+Epoch [2/20], Batch [400/1562], Loss: 7.1731, Avg Loss: 7.1504
+
+...
+
+(base) ➜  poc git:(main) ✗ du -sh best_translator.pth 
+386M	best_translator.pth
+(base) ➜  poc git:(main) ✗
+
