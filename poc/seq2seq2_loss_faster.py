@@ -22,8 +22,8 @@ TEACHER_FORCING_RATIO = 0.5
 
 class Vocabulary:
     def __init__(self, freq_threshold=2):
-        self.itos = {0: "<pxad>", 1: "<bxos>", 2: "<exos>", 3: "<unk>"}
-        self.stoi = {"<pxad>": 0, "<bxos>": 1, "<exos>": 2, "<unk>": 3}
+        self.itos = {0: "<pad>", 1: "<bos>", 2: "<eos>", 3: "<unk>"}
+        self.stoi = {"<pad>": 0, "<bos>": 1, "<eos>": 2, "<unk>": 3}
         self.freq_threshold = freq_threshold
         
     def __len__(self):
@@ -58,15 +58,15 @@ class TranslationDataset(Dataset):
         chi_text = self.chinese_data[index]
         
         # Convert to indices
-        eng_numericalized = [self.eng_vocab.stoi["<bxos>"]]
+        eng_numericalized = [self.eng_vocab.stoi["<bos>"]]
         eng_numericalized += [self.eng_vocab.stoi.get(token, self.eng_vocab.stoi["<unk>"]) 
                             for token in eng_text]
-        eng_numericalized.append(self.eng_vocab.stoi["<exos>"])
+        eng_numericalized.append(self.eng_vocab.stoi["<eos>"])
         
-        chi_numericalized = [self.chi_vocab.stoi["<bxos>"]]
+        chi_numericalized = [self.chi_vocab.stoi["<bos>"]]
         chi_numericalized += [self.chi_vocab.stoi.get(token, self.chi_vocab.stoi["<unk>"]) 
                             for token in chi_text]
-        chi_numericalized.append(self.chi_vocab.stoi["<exos>"])
+        chi_numericalized.append(self.chi_vocab.stoi["<eos>"])
         
         return torch.tensor(eng_numericalized), torch.tensor(chi_numericalized)
 
@@ -113,27 +113,28 @@ class Seq2Seq(nn.Module):
         self.encoder = encoder
         self.decoder = decoder
         self.device = device
-        
+
     def forward(self, source, target, teacher_forcing_ratio=0.5):
         batch_size = source.shape[1]
         target_len = target.shape[0]
-        target_vocab_size = self.decoder.output_dim
-        
+        # Fix: Use the size of the decoder's final linear layer instead of output_dim
+        target_vocab_size = self.decoder.fc.out_features
+
         outputs = torch.zeros(target_len, batch_size, target_vocab_size).to(self.device)
         hidden, cell = self.encoder(source)
-        
-        # First input to decoder is the <bxos> token
+
+        # First input to decoder is the <bos> token
         input = target[0,:]
-        
+
         for t in range(1, target_len):
             output, hidden, cell = self.decoder(input, hidden, cell)
             outputs[t] = output
-            
+
             # Teacher forcing
             teacher_force = torch.rand(1).item() < teacher_forcing_ratio
             top1 = output.argmax(1)
             input = target[t] if teacher_force else top1
-        
+
         return outputs
 
 def save_model(model, optimizer, eng_vocab, chi_vocab, epoch, loss, filename):
@@ -187,14 +188,14 @@ def translate_sentence(model, sentence, eng_vocab, chi_vocab, device, max_length
 
     # Convert tokens to indices
     tokens = [eng_vocab.stoi.get(token, eng_vocab.stoi['<unk>']) for token in tokens]
-    tokens = [eng_vocab.stoi['<bxos>']] + tokens + [eng_vocab.stoi['<exos>']]
+    tokens = [eng_vocab.stoi['<bos>']] + tokens + [eng_vocab.stoi['<eos>']]
 
     source = torch.LongTensor(tokens).unsqueeze(1).to(device)
 
     with torch.no_grad():
         hidden, cell = model.encoder(source)
 
-    outputs = [chi_vocab.stoi['<bxos>']]
+    outputs = [chi_vocab.stoi['<bos>']]
 
     for _ in range(max_length):
         previous = torch.LongTensor([outputs[-1]]).to(device)
@@ -205,12 +206,12 @@ def translate_sentence(model, sentence, eng_vocab, chi_vocab, device, max_length
 
         outputs.append(best_guess)
 
-        if best_guess == chi_vocab.stoi['<exos>']:
+        if best_guess == chi_vocab.stoi['<eos>']:
             break
 
     translated_tokens = [chi_vocab.itos[idx] for idx in outputs]
     # Remove special tokens
-    translated_tokens = translated_tokens[1:-1]  # Remove <bxos> and <exos>
+    translated_tokens = translated_tokens[1:-1]  # Remove <bos> and <eos>
     return ''.join(translated_tokens)  # Join without spaces for Chinese
 
 def collate_fn(batch):
@@ -231,8 +232,8 @@ def collate_fn(batch):
 
 def train_model():
     # Load and preprocess data
-    english_data = open("../synthetic_data/news-commentary-v12.zh-en.en").readlines()[1:30000]
-    chinese_data = open("../synthetic_data/news-commentary-v12.zh-en.zh").readlines()[1:30000]
+    english_data = open("../synthetic_data/news-commentary-v12.zh-en.en").readlines()[1:100000]
+    chinese_data = open("../synthetic_data/news-commentary-v12.zh-en.zh").readlines()[1:100000]
 
     # Tokenize data
     english_tokenized = [sentence.strip().split() for sentence in english_data]
@@ -275,7 +276,7 @@ def train_model():
 
     # Define loss function with label smoothing
     criterion = nn.CrossEntropyLoss(
-        ignore_index=eng_vocab.stoi["<pxad>"],
+        ignore_index=eng_vocab.stoi["<pad>"],
         label_smoothing=0.1  # Add label smoothing to prevent overconfidence
     )
 
