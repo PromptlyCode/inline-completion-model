@@ -106,3 +106,24 @@ English: The weather is very nice today.
 Chinese: <unk>的<unk>。
 (inline-completion-model) ➜  poc git:(main) ✗ 
 
+## --------------- limit 30000 ----------------
+(inline-completion-model) ➜  poc git:(main) ✗ prunp seq2seq1.py 
+Building prefix dict from the default dictionary ...
+Loading model from cache /tmp/jieba.cache
+Loading model cost 0.812 seconds.
+Prefix dict has been built successfully.
+Epoch [1/10], Batch [0/937], Loss: 9.8325
+Epoch [1/10], Batch [100/937], Loss: 7.0746
+Epoch [1/10], Batch [200/937], Loss: 7.0262
+Epoch [1/10], Batch [300/937], Loss: 6.7384
+Epoch [1/10], Batch [400/937], Loss: 6.8841
+Epoch [1/10], Batch [500/937], Loss: 6.8259
+Epoch [1/10], Batch [600/937], Loss: 6.7976
+Epoch [1/10], Batch [700/937], Loss: 6.5541
+Epoch [1/10], Batch [800/937], Loss: 6.8184
+Epoch [1/10], Batch [900/937], Loss: 6.7321
+Epoch: 1, Average Loss: 6.8586
+Model saved to best_translator.pth
+Epoch [2/10], Batch [0/937], Loss: 6.6374
+Epoch [2/10], Batch [100/937], Loss: 6.4108
+
