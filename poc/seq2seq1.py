@@ -203,12 +203,26 @@ def translate_sentence(model, sentence, eng_vocab, chi_vocab, device, max_length
     translated_tokens = translated_tokens[1:-1]  # Remove <bxos> and <exos>
     return ''.join(translated_tokens)  # Join without spaces for Chinese
 
+def collate_fn(batch):
+    """
+    Custom collate function for DataLoader
+    """
+    # Separate source and target sequences
+    src_batch, tgt_batch = [], []
+    for src_item, tgt_item in batch:
+        src_batch.append(src_item)
+        tgt_batch.append(tgt_item)
+
+    # Pad sequences
+    src_batch = pad_sequence(src_batch)
+    tgt_batch = pad_sequence(tgt_batch)
+
+    return src_batch, tgt_batch
+
 def train_model():
     # Load and preprocess data
     english_data = open("../synthetic_data/news-commentary-v12.zh-en.en").readlines()
-    english_data = english_data[1:3000]
     chinese_data = open("../synthetic_data/news-commentary-v12.zh-en.zh").readlines()
-    chinese_data = chinese_data[1:3000]
 
     # Tokenize data
     english_tokenized = [sentence.strip().split() for sentence in english_data]
@@ -222,9 +236,13 @@ def train_model():
 
     # Create dataset and dataloader
     dataset = TranslationDataset(english_tokenized, chinese_tokenized, eng_vocab, chi_vocab)
-    loader = DataLoader(dataset, batch_size=BATCH_SIZE, shuffle=True,
-                       collate_fn=lambda batch: pad_sequence([item[0] for item in batch]),
-                       drop_last=True)
+    loader = DataLoader(
+        dataset,
+        batch_size=BATCH_SIZE,
+        shuffle=True,
+        collate_fn=collate_fn,  # Use custom collate function
+        drop_last=True
+    )
 
     # Initialize model
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
@@ -238,7 +256,7 @@ def train_model():
     criterion = nn.CrossEntropyLoss(ignore_index=eng_vocab.stoi["<pxad>"])
 
     # Training loop
-    num_epochs = 100
+    num_epochs = 10
     best_loss = float('inf')
 
     for epoch in range(num_epochs):
@@ -261,8 +279,11 @@ def train_model():
 
             total_loss += loss.item()
 
+            if batch_idx % 100 == 0:
+                print(f"Epoch [{epoch+1}/{num_epochs}], Batch [{batch_idx}/{len(loader)}], Loss: {loss.item():.4f}")
+
         avg_loss = total_loss/len(loader)
-        print(f"Epoch: {epoch+1}, Loss: {avg_loss:.4f}")
+        print(f"Epoch: {epoch+1}, Average Loss: {avg_loss:.4f}")
 
         # Save the best model
         if avg_loss < best_loss:

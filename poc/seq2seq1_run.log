@@ -1,0 +1,9 @@
+(inline-completion-model) ➜  poc git:(main) ✗ prunp seq2seq1.py
+Building prefix dict from the default dictionary ...
+Loading model from cache /tmp/jieba.cache
+Loading model cost 0.789 seconds.
+Prefix dict has been built successfully.
+Epoch [1/10], Batch [0/7111], Loss: 10.8502
+Epoch [1/10], Batch [100/7111], Loss: 7.4877
+...
+
