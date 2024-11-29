@@ -5,5 +5,60 @@ Loading model cost 0.789 seconds.
 Prefix dict has been built successfully.
 Epoch [1/10], Batch [0/7111], Loss: 10.8502
 Epoch [1/10], Batch [100/7111], Loss: 7.4877
-...
+Epoch [1/10], Batch [200/7111], Loss: 7.2134
+Epoch [1/10], Batch [300/7111], Loss: 7.0276
+Epoch [1/10], Batch [400/7111], Loss: 7.2494
+Epoch [1/10], Batch [500/7111], Loss: 7.0450
+Epoch [1/10], Batch [600/7111], Loss: 6.8434
+Epoch [1/10], Batch [700/7111], Loss: 6.8179
+Epoch [1/10], Batch [800/7111], Loss: 6.7652
+Epoch [1/10], Batch [900/7111], Loss: 7.0036
+Epoch [1/10], Batch [1000/7111], Loss: 6.8505
+Epoch [1/10], Batch [1100/7111], Loss: 6.8977
+Epoch [1/10], Batch [1200/7111], Loss: 6.9355
+Epoch [1/10], Batch [1300/7111], Loss: 6.8444
+Epoch [1/10], Batch [1400/7111], Loss: 6.9839
+Epoch [1/10], Batch [1500/7111], Loss: 7.0312
+Epoch [1/10], Batch [1600/7111], Loss: 6.8220
+Epoch [1/10], Batch [1700/7111], Loss: 6.8934
+Epoch [1/10], Batch [1800/7111], Loss: 6.8535
+Epoch [1/10], Batch [1900/7111], Loss: 7.0794
+Epoch [1/10], Batch [2000/7111], Loss: 6.6744
+Epoch [1/10], Batch [2100/7111], Loss: 6.7432
+Epoch [1/10], Batch [2200/7111], Loss: 7.1960
+Epoch [1/10], Batch [2300/7111], Loss: 6.9062
+Epoch [1/10], Batch [2400/7111], Loss: 7.0247
+Epoch [1/10], Batch [2500/7111], Loss: 6.6774
+Epoch [1/10], Batch [2600/7111], Loss: 6.7646
+Epoch [1/10], Batch [2700/7111], Loss: 6.5998
+Epoch [1/10], Batch [2800/7111], Loss: 6.8858
+Epoch [1/10], Batch [2900/7111], Loss: 6.9287
+Epoch [1/10], Batch [3000/7111], Loss: 6.6883
+Epoch [1/10], Batch [3100/7111], Loss: 6.6929
+Epoch [1/10], Batch [3200/7111], Loss: 6.2865
+Epoch [1/10], Batch [3300/7111], Loss: 6.6183
+Epoch [1/10], Batch [3400/7111], Loss: 6.7202
+Epoch [1/10], Batch [3500/7111], Loss: 6.3319
+Epoch [1/10], Batch [3600/7111], Loss: 6.4363
+Epoch [1/10], Batch [3700/7111], Loss: 6.5134
+Epoch [1/10], Batch [3800/7111], Loss: 6.7194
+Epoch [1/10], Batch [3900/7111], Loss: 6.6766
+Epoch [1/10], Batch [4000/7111], Loss: 6.7379
+Epoch [1/10], Batch [4100/7111], Loss: 6.4973
+Traceback (most recent call last):
+  File "/home/xlisp/Desktop/inline-completion-model/poc/seq2seq1.py", line 314, in <module>
+    main()
+  File "/home/xlisp/Desktop/inline-completion-model/poc/seq2seq1.py", line 301, in main
+    train_model()
+  File "/home/xlisp/Desktop/inline-completion-model/poc/seq2seq1.py", line 276, in train_model
+    loss.backward()
+  File "/home/xlisp/anaconda3/envs/inline-completion-model/lib/python3.11/site-packages/torch/_tensor.py", line 581, in backward
+    torch.autograd.backward(
+  File "/home/xlisp/anaconda3/envs/inline-completion-model/lib/python3.11/site-packages/torch/autograd/__init__.py", line 347, in backward
+    _engine_run_backward(
+  File "/home/xlisp/anaconda3/envs/inline-completion-model/lib/python3.11/site-packages/torch/autograd/graph.py", line 825, in _engine_run_backward
+    return Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 2.78 GiB. GPU 0 has a total capacity of 7.92 GiB of which 919.00 MiB is free. Including non-PyTorch memory, this process has 6.84 GiB memory in use. Of the allocated memory 6.41 GiB is allocated by PyTorch, and 304.37 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+(inline-completion-model) ➜  poc git:(main) ✗
 
