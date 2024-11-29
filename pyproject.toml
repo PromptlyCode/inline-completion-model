@@ -12,6 +12,7 @@ transformers = "^4.46.3"
 faiss-cpu = "^1.9.0.post1"
 ollama = "^0.4.2"
 jieba = "^0.42.1"
+ipython = "^8.29.0"
 
 
 [build-system]
