@@ -240,4 +240,24 @@ English: The weather is very nice today.
 Chinese: 这的。
 (inline-completion-model) ➜  poc git:(main) ✗ 
 
+## ---- test ---- 
+
+In [1]: # %load seq2seq1.py
+
+In [2]: device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+
+In [3]: model, optimizer, eng_vocab, chi_vocab, epoch, loss = load_model('best_translator.pth', device)
+<ipython-input-1-83e2f4c6229d>:149: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  checkpoint = torch.load(filename, map_location=device)
+
+
+In [6]: translate_sentence(model, "Of course, the fall of the house of Lehman Brothers has nothing to do with the fall of the Berli
+   ...: n Wall.", eng_vocab, chi_vocab, device)
+Out[6]: '当然，在的的的的的的的的的的的。'
+
+In [14]: translate_sentence(model, "You actually have to implement the solution", eng_vocab, chi_vocab, device)
+Out[14]: '我们的的的的。'
+
+(inline-completion-model) ➜  poc git:(main) ✗ du -sh  best_translator.pth
+212M	best_translator.pth
 
