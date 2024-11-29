@@ -93,4 +93,78 @@ Epoch [3/20], Batch [500/1562], Loss: 6.8672, Avg Loss: 7.0195
 Epoch [3/20], Batch [550/1562], Loss: 6.7716, Avg Loss: 6.9956
 Epoch [3/20], Batch [600/1562], Loss: 7.0181, Avg Loss: 7.0214
 ... ...
+Epoch [10/20], Batch [1550/1562], Loss: 6.6842, Avg Loss: 6.7122
+Epoch: 10, Average Loss: 6.6804
+Model saved to best_translator.pth
+New best model saved with loss: 6.6804
+Model saved to translator_checkpoint_epoch_10.pth
+Epoch [11/20], Batch [0/1562], Loss: 6.7575, Avg Loss: 6.7575
+Epoch [11/20], Batch [50/1562], Loss: 6.5071, Avg Loss: 6.6137
+Epoch [11/20], Batch [100/1562], Loss: 6.2012, Avg Loss: 6.6347
+Epoch [11/20], Batch [150/1562], Loss: 6.6668, Avg Loss: 6.6310
+Epoch [11/20], Batch [200/1562], Loss: 6.4340, Avg Loss: 6.6270
+Epoch [11/20], Batch [250/1562], Loss: 6.5785, Avg Loss: 6.6289
+Epoch [11/20], Batch [300/1562], Loss: 6.9681, Avg Loss: 6.6778
+Epoch [11/20], Batch [350/1562], Loss: 6.6842, Avg Loss: 6.6661
+Epoch [11/20], Batch [400/1562], Loss: 6.6927, Avg Loss: 6.6633
+Epoch [11/20], Batch [450/1562], Loss: 6.5682, Avg Loss: 6.6335
+Epoch [11/20], Batch [500/1562], Loss: 6.6451, Avg Loss: 6.6207
+Epoch [11/20], Batch [550/1562], Loss: 6.6597, Avg Loss: 6.6206
+Epoch [11/20], Batch [600/1562], Loss: 6.5039, Avg Loss: 6.6295
+Epoch [11/20], Batch [650/1562], Loss: 6.6399, Avg Loss: 6.6393
+Epoch [11/20], Batch [700/1562], Loss: 6.6697, Avg Loss: 6.6589
+Epoch [11/20], Batch [750/1562], Loss: 6.5500, Avg Loss: 6.6583
+Epoch [11/20], Batch [800/1562], Loss: 6.8268, Avg Loss: 6.6444
+Epoch [11/20], Batch [850/1562], Loss: 6.7426, Avg Loss: 6.6311
+Epoch [11/20], Batch [900/1562], Loss: 6.4077, Avg Loss: 6.6289
+Epoch [11/20], Batch [950/1562], Loss: 6.7412, Avg Loss: 6.6935
+Epoch [11/20], Batch [1000/1562], Loss: 6.7015, Avg Loss: 6.6482
+Epoch [11/20], Batch [1050/1562], Loss: 6.5469, Avg Loss: 6.6639
+Epoch [11/20], Batch [1100/1562], Loss: 6.5700, Avg Loss: 6.6862
+Epoch [11/20], Batch [1150/1562], Loss: 6.7651, Avg Loss: 6.6514
+Epoch [11/20], Batch [1200/1562], Loss: 6.8476, Avg Loss: 6.6475
+Epoch [11/20], Batch [1250/1562], Loss: 6.2904, Avg Loss: 6.6350
+Epoch [11/20], Batch [1300/1562], Loss: 6.6531, Avg Loss: 6.6425
+Epoch [11/20], Batch [1350/1562], Loss: 6.6183, Avg Loss: 6.6601
+Epoch [11/20], Batch [1400/1562], Loss: 6.7930, Avg Loss: 6.6592
+Epoch [11/20], Batch [1450/1562], Loss: 6.5637, Avg Loss: 6.6171
+Epoch [11/20], Batch [1500/1562], Loss: 6.3216, Avg Loss: 6.6685
+Epoch [11/20], Batch [1550/1562], Loss: 6.8497, Avg Loss: 6.6691
+Epoch: 11, Average Loss: 6.6468
+Model saved to best_translator.pth
+New best model saved with loss: 6.6468
+Epoch [12/20], Batch [0/1562], Loss: 6.6654, Avg Loss: 6.6654
+Epoch [12/20], Batch [50/1562], Loss: 6.6277, Avg Loss: 6.6155
+Epoch [12/20], Batch [100/1562], Loss: 6.6326, Avg Loss: 6.5877
+Epoch [12/20], Batch [150/1562], Loss: 6.7460, Avg Loss: 6.6092
+Epoch [12/20], Batch [200/1562], Loss: 6.9692, Avg Loss: 6.6127
+Epoch [12/20], Batch [250/1562], Loss: 6.6560, Avg Loss: 6.6406
+Epoch [12/20], Batch [300/1562], Loss: 6.8133, Avg Loss: 6.6327
+Epoch [12/20], Batch [350/1562], Loss: 6.6403, Avg Loss: 6.5693
+Epoch [12/20], Batch [400/1562], Loss: 6.9665, Avg Loss: 6.6126
+Epoch [12/20], Batch [450/1562], Loss: 6.3245, Avg Loss: 6.6062
+Epoch [12/20], Batch [500/1562], Loss: 6.4632, Avg Loss: 6.5769
+Epoch [12/20], Batch [550/1562], Loss: 6.6177, Avg Loss: 6.6136
+Epoch [12/20], Batch [600/1562], Loss: 6.5429, Avg Loss: 6.6420
+Epoch [12/20], Batch [650/1562], Loss: 6.8122, Avg Loss: 6.6348
+Epoch [12/20], Batch [700/1562], Loss: 6.5358, Avg Loss: 6.6554
+Epoch [12/20], Batch [750/1562], Loss: 6.9487, Avg Loss: 6.6327
+Epoch [12/20], Batch [800/1562], Loss: 6.5969, Avg Loss: 6.6245
+Epoch [12/20], Batch [850/1562], Loss: 6.7673, Avg Loss: 6.6242
+Epoch [12/20], Batch [900/1562], Loss: 6.8588, Avg Loss: 6.6397
+Epoch [12/20], Batch [950/1562], Loss: 6.6897, Avg Loss: 6.6040
+Epoch [12/20], Batch [1000/1562], Loss: 6.5015, Avg Loss: 6.6591
+Epoch [12/20], Batch [1350/1562], Loss: 6.5474, Avg Loss: 6.6357
+Epoch [12/20], Batch [1400/1562], Loss: 6.6209, Avg Loss: 6.5734
+Epoch [12/20], Batch [1450/1562], Loss: 6.3593, Avg Loss: 6.6508
+Epoch [12/20], Batch [1500/1562], Loss: 6.7067, Avg Loss: 6.6658
+Epoch [12/20], Batch [1550/1562], Loss: 6.6676, Avg Loss: 6.6431
+Epoch: 12, Average Loss: 6.6244
+Model saved to best_translator.pth
+New best model saved with loss: 6.6244
+Epoch [13/20], Batch [0/1562], Loss: 6.6578, Avg Loss: 6.6578
+Epoch [13/20], Batch [50/1562], Loss: 6.4899, Avg Loss: 6.5985
+Epoch [13/20], Batch [100/1562], Loss: 6.5922, Avg Loss: 6.5604
+Epoch [13/20], Batch [150/1562], Loss: 6.2504, Avg Loss: 6.5709
+Epoch [13/20], Batch [200/1562], Loss: 6.5264, Avg Loss: 6.5986
 
