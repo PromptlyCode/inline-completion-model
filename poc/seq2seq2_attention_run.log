@@ -1,3 +1,4 @@
 (inline-completion-model) ➜  poc git:(main) prunp seq2seq2_attention.py 
 Epoch: 1, Loss: 5.2406
-
+Epoch: 2, Loss: 4.9510
+...
