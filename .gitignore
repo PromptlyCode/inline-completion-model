@@ -7,4 +7,4 @@ synthetic_data/news-commentary-v12.zh-en.zh
 best_translator.pth
 translator_checkpoint_epoch_10.pth
 translator_checkpoint_epoch_5.pth
-
+*.pt

@@ -194,10 +194,13 @@ def load_model(path, device):
     en_dict = checkpoint['en_dict']
     zh_dict = checkpoint['zh_dict']
     
-    encoder = Encoder(len(en_dict), 256, 512)
-    decoder = Decoder(len(zh_dict), 256, 512)
+    # Create model with the same architecture as training
+    encoder = Encoder(len(en_dict), 256, 512, n_layers=2, dropout=0.1)
+    decoder = Decoder(len(zh_dict), 256, 512, n_layers=2, dropout=0.1)
     model = Seq2SeqWithAttention(encoder, decoder, device)
+    
     model.load_state_dict(checkpoint['model_state_dict'])
+    model = model.to(device)
     return model, en_dict, zh_dict
 
 def train(model, train_loader, optimizer, criterion, device):
@@ -231,7 +234,7 @@ def main():
     HIDDEN_SIZE = 512
     N_LAYERS = 2
     DROPOUT = 0.1
-    N_EPOCHS = 10
+    N_EPOCHS = 50
     LEARNING_RATE = 0.001
 
     device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
@@ -253,9 +256,65 @@ def main():
     for epoch in range(N_EPOCHS):
         loss = train(model, train_loader, optimizer, criterion, device)
         print(f'Epoch: {epoch+1}, Loss: {loss:.4f}')
+        save_model(model, dataset.en_dict, dataset.zh_dict, 'translation_model.pt')
 
     # Save model
     save_model(model, dataset.en_dict, dataset.zh_dict, 'translation_model.pt')
+
+def predict(model, en_dict, zh_dict, sentence, device, max_length=50):
+    model.eval()
+
+    # Tokenize and convert to indices
+    tokens = ['<bxos>'] + sentence.strip().split() + ['<exos>']
+    src_indices = [en_dict.word2idx.get(token, en_dict.word2idx['<bxos>']) for token in tokens]
+
+    # Pad sequence
+    src_indices = src_indices[:max_length]
+    src_indices += [en_dict.word2idx['<pxad>']] * (max_length - len(src_indices))
+
+    # Convert to tensor
+    src_tensor = torch.LongTensor(src_indices).unsqueeze(0).to(device)
+
+    # Get encoder outputs
+    with torch.no_grad():
+        encoder_outputs, hidden, cell = model.encoder(src_tensor)
+
+    # Initialize decoder input
+    decoder_input = torch.LongTensor([zh_dict.word2idx['<bxos>']]).to(device)
+
+    # Store predictions
+    predictions = ['<bxos>']
+
+    # Decode one token at a time
+    for _ in range(max_length):
+        with torch.no_grad():
+            output, hidden, cell = model.decoder(decoder_input, hidden, cell, encoder_outputs)
+
+        # Get predicted token
+        pred_token_idx = output.argmax(1).item()
+        pred_token = zh_dict.idx2word[pred_token_idx]
+
+        # Break if end token
+        if pred_token == '<exos>':
+            break
+
+        predictions.append(pred_token)
+        decoder_input = torch.LongTensor([pred_token_idx]).to(device)
+
+    # Remove special tokens and join characters
+    translation = ''.join([char for char in predictions[1:] if char not in ['<bxos>', '<exos>', '<pxad>']])
+
+    return translation
+
+# Example usage:
+"""
+device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+model, en_dict, zh_dict = load_model('translation_model.pt', device)
+english_sentence = "Hello, how are you?"
+chinese_translation = predict(model, en_dict, zh_dict, english_sentence, device)
+print(f"English: {english_sentence}")
+print(f"Chinese: {chinese_translation}")
+"""
 
 if __name__ == '__main__':
     main()

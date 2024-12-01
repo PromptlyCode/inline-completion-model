@@ -7,4 +7,44 @@ Epoch: 5, Loss: 4.8211
 Epoch: 6, Loss: 4.7942
 Epoch: 7, Loss: 4.7782
 ...
+11 , Loss: 4.69 
+------ 11 , Loss: 4.69 ---- for test:
+In [8]: device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+   ...: model, en_dict, zh_dict = load_model('translation_model.pt', device)
+   ...:
+<ipython-input-7-1da3638383f2>:2: FutureWarning: You are using `torch.load` with `weights_only=False` (the current default value), which uses the default pickle module implicitly. It is possible to construct malicious pickle data which will execute arbitrary code during unpickling (See https://github.com/pytorch/pytorch/blob/main/SECURITY.md#untrusted-models for more details). In a future release, the default value for `weights_only` will be flipped to `True`. This limits the functions that could be executed during unpickling. Arbitrary objects will no longer be allowed to be loaded via this mode unless they are explicitly allowlisted by the user via `torch.serialization.add_safe_globals`. We recommend you start setting `weights_only=True` for any use case where you don't have full control of the loaded file. Please open an issue on GitHub for any issues related to this experimental feature.
+  checkpoint = torch.load(path)
+
+In [9]: english_sentence = "Hello, how are you?"
+   ...: chinese_translation = predict(model, en_dict, zh_dict, english_sentence, device)
+   ...:
+
+In [10]: print(chinese_translation)
+这此，时，美国的济的的的的的的的的的的的的的的的的。
+
+In [11]: predict(model, en_dict, zh_dict, "I", device)
+Out[11]: '-1. 1'
+
+In [12]: predict(model, en_dict, zh_dict, "Who are you", device)
+Out[12]: '但是，，的的的的的的的的的的的的的的的的的的的的。'
+
+In [13]: predict(model, en_dict, zh_dict, "OK, no prob", device)
+Out[13]: '如果，们的的的的的，，，，，就会有到。'
+
+In [14]: predict(model, en_dict, zh_dict, "Haha", device)
+Out[14]: '在这，，，，，，的的的的的的的的的的的的的的的的的'
+
+In [15]: predict(model, en_dict, zh_dict, "Of course, the fall of the house of Lehman Brothers has nothing to do with the fall of the Berli", device)
+Out[15]: '这然，这们的的的的的的的的的的的的的的的的的的的的的的。'
+
+In [16]: predict(model, en_dict, zh_dict, "Of course, the fall of the house of Lehman Brothers has nothing to do with the fall of the Berli", device)
+Out[16]: '这然，这们的的的的的的的的的的的的的的的的的的的的的的。'
+
+In [17]: predict(model, en_dict, zh_dict, "You actually have to implement the solution", device)
+Out[17]: '我们，我们的的的的的的的的的的的的的的的的的。'
+
+In [18]: predict(model, en_dict, zh_dict, "The weather is very nice today.", device)
+Out[18]: '这们，，的的的的的的的的的的的的的的的的的的的。'
+
+In [19]:
 
