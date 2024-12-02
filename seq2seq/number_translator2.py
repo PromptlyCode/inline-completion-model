@@ -221,19 +221,27 @@ class NumeralTranslator:
         input_seq = self.prepare_sequence(list(str(input_number)), self.input_char_to_idx)
         input_seq = input_seq.unsqueeze(0)  # Add batch dimension
         
+        # Create dummy target sequence of zeros
+        dummy_target = torch.zeros_like(input_seq)
+        
         # Disable gradient computation
         with torch.no_grad():
             # Get model outputs
-            outputs = self.model(input_seq, torch.zeros_like(input_seq))
+            outputs = self.model(input_seq, dummy_target)
             
             # Get the most likely output characters
-            predicted_indices = outputs.argmax(dim=-1).squeeze()
+            predicted_indices = outputs.argmax(dim=-1)
+            
+            # Ensure we have the correct tensor shape
+            if predicted_indices.dim() > 2:
+                predicted_indices = predicted_indices.squeeze(0)
             
             # Convert indices back to characters
             predicted_chars = [self.output_idx_to_char[idx.item()] for idx in predicted_indices[0]]
             
             # Join characters to form a word
             return ''.join(predicted_chars).strip()
+    
     
     def save_model(self, filepath='numeral_translator.pth'):
         """Save model state."""
@@ -264,28 +272,29 @@ class NumeralTranslator:
         plt.savefig('training_loss.png')
         plt.close()
 
+
 def main():
     # Define character sets
     input_chars = ['<pxad>', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
-    output_chars = ['<pxad>', '<bxos>', '<exos>', 
-                    'z', 'e', 'r', 'o', 'n', 'e', 't', 'w', 'h', 'i', 
+    output_chars = ['<pxad>', '<bxos>', '<exos>',
+                    'z', 'e', 'r', 'o', 'n', 't', 'w', 'h', 'i',
                     'f', 'u', 's', 'v', 'g', 'l', 'y', 'a', 'x']
-    
+
     # Create translator
     translator = NumeralTranslator(input_chars, output_chars)
-    
+
     # Train the model
     losses = translator.train(epochs=200)
-    
+
     # Save the model
     translator.save_model()
-    
+
     # Demonstrate translation
     test_numbers = [0, 1, 12, 23, 45, 67, 89]
     for num in test_numbers:
         translation = translator.translate(num)
         print(f"{num}: {translation}")
-    
+
     return translator
 
 if __name__ == '__main__':

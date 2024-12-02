@@ -33,3 +33,36 @@ Traceback (most recent call last):
 IndexError: invalid index of a 0-dim tensor. Use `tensor.item()` in Python or `tensor.item<T>()` in C++ to convert a 0-dim tensor to a number
 (inline-completion-model) ➜  seq2seq git:(main) ✗ 
 
+###### ----------- run 2 ------------- 
+(inline-completion-model) ➜  seq2seq git:(main) ✗ prunp number_translator2.py
+Epoch 0, Loss: 4.0019
+Epoch 10, Loss: 2.5499
+Epoch 20, Loss: 1.8758
+Epoch 30, Loss: 1.4758
+Epoch 40, Loss: 1.2080
+Epoch 50, Loss: 0.8940
+Epoch 60, Loss: 0.6252
+Epoch 70, Loss: 0.5168
+Epoch 80, Loss: 0.4322
+Epoch 90, Loss: 0.2515
+Epoch 100, Loss: 0.1385
+Epoch 110, Loss: 0.0955
+Epoch 120, Loss: 0.0602
+Epoch 130, Loss: 0.0442
+Epoch 140, Loss: 0.0311
+Epoch 150, Loss: 0.0226
+Epoch 160, Loss: 0.0208
+Epoch 170, Loss: 0.0164
+Epoch 180, Loss: 0.0150
+Epoch 190, Loss: 0.0120
+Model saved to numeral_translator.pth
+0: z
+1: <pxad>
+12: ty
+23: tt
+45: ff
+67: ss
+89: ee
+(inline-completion-model) ➜  seq2seq git:(main) ✗ 
+
+
