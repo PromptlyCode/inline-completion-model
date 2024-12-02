@@ -1,0 +1,130 @@
+(inline-completion-model) ➜  inline-completion-model git:(main) ✗ prunp seq2seq/number_translator3.py
+Training model...
+Input characters: [' ', "'", ',', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '[', ']']
+Output characters: [' ', 'e', 'f', 'g', 'h', 'i', 'n', 'o', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
+Epoch 0, Loss: 3.8641
+Epoch 10, Loss: 2.0950
+Epoch 20, Loss: 1.3626
+Epoch 30, Loss: 0.6517
+Epoch 40, Loss: 0.4596
+Epoch 50, Loss: 0.1463
+Epoch 60, Loss: 0.0677
+Epoch 70, Loss: 0.0554
+Epoch 80, Loss: 0.0586
+Epoch 90, Loss: 0.0749
+Epoch 100, Loss: 0.0418
+Epoch 110, Loss: 0.0527
+Epoch 120, Loss: 0.0949
+Epoch 130, Loss: 0.0613
+Epoch 140, Loss: 0.0392
+Epoch 150, Loss: 0.0257
+Epoch 160, Loss: 0.0325
+Epoch 170, Loss: 0.1519
+Epoch 180, Loss: 0.0373
+Epoch 190, Loss: 0.0647
+Epoch 200, Loss: 0.0346
+Epoch 210, Loss: 0.0311
+Epoch 220, Loss: 0.0634
+Epoch 230, Loss: 0.0298
+Epoch 240, Loss: 0.0299
+Epoch 250, Loss: 0.0317
+Epoch 260, Loss: 0.0609
+Epoch 270, Loss: 0.0295
+Epoch 280, Loss: 0.0318
+Epoch 290, Loss: 0.0620
+Model saved to numeral_translator.pth
+
+Testing translations:
+0 -> four
+5 -> f
+13 ->
+25 -> t
+42 -> ty
+67 -> ss
+89 -> nine
+99 -> ni
+
+Enter a number (0-99) to translate or 'q' to quit:
+> 0
+Translation: fin
+> 0
+Translation: two
+> 0
+Translation: f
+> 0
+Translation: tw
+> 2
+Translation: ty
+> 3
+Translation: ty  threee
+> 9
+Translation: n
+> 11
+Translation:
+> 11
+Translation:
+> 99
+Translation: nnine
+> 9
+Translation: nn
+> 8
+Translation:
+> 88
+Translation: eiht
+> 1111
+Please enter a number between 0 and 99
+> i
+Invalid input. Please enter a valid number or 'q' to quit
+> 6
+Translation:
+> 8
+Translation: ei
+> 1
+Translation:
+> 2
+Translation: ty six
+> 6
+Translation:
+> 8
+Translation: e
+> 9
+Translation: n
+> 0
+Translation: four
+> 1
+Translation:
+> 2
+Translation: t
+> 3
+Translation: t
+> 4
+Translation: f
+> 5
+Translation: fi
+> 6
+Translation:
+> 7
+Translation: se
+> 8
+Translation: e
+> 9
+Translation: nine
+> 0
+Translation: tw
+> 10
+Translation: o
+> 11
+Translation:
+> 12
+Translation:
+> 13
+Translation:
+> 14
+Translation:
+> 15
+Translation:
+> 16
+Translation:
+> 66
+Translation:
+>
