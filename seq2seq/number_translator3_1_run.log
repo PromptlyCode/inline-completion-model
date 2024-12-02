@@ -1,0 +1,94 @@
+(inline-completion-model) ➜  seq2seq git:(main) ✗ prunp number_translator3_1.py
+
+Training model...
+Input characters: [' ', "'", ',', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '[', ']']
+Output characters: [' ', 'e', 'f', 'g', 'h', 'i', 'n', 'o', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
+Epoch 0, Loss: 2.1860
+Epoch 10, Loss: 0.0336
+Epoch 20, Loss: 0.0270
+Epoch 30, Loss: 0.0217
+Epoch 40, Loss: 0.0224
+Epoch 50, Loss: 0.0250
+Epoch 60, Loss: 0.0238
+Epoch 70, Loss: 0.0205
+Epoch 80, Loss: 0.0208
+Epoch 90, Loss: 0.0210
+Epoch 100, Loss: 0.0235
+Epoch 110, Loss: 0.0247
+Epoch 120, Loss: 0.0214
+Epoch 130, Loss: 0.0214
+Epoch 140, Loss: 0.0225
+Epoch 150, Loss: 0.0211
+Epoch 160, Loss: 0.0196
+Epoch 170, Loss: 0.0218
+Epoch 180, Loss: 0.0237
+Epoch 190, Loss: 0.0217
+Epoch 200, Loss: 0.0223
+Epoch 210, Loss: 0.0240
+Epoch 220, Loss: 0.0225
+Epoch 230, Loss: 0.0235
+Epoch 240, Loss: 0.0224
+Epoch 250, Loss: 0.0193
+Epoch 260, Loss: 0.0227
+Epoch 270, Loss: 0.0229
+Epoch 280, Loss: 0.0226
+Epoch 290, Loss: 0.0220
+Model saved to numeral_translator.pth
+
+Testing translations:
+0 -> ttinnine
+5 -> ffi
+13 ->
+25 -> ttttwenty
+42 -> foft
+67 -> sssiet   n
+89 -> eeeenty ei
+99 -> ninet
+
+Enter a number (0-99) to translate or 'q' to quit:
+> Invalid input. Please enter a valid number or 'q' to quit
+> 9
+Translation: nine
+> 1
+Translation:
+> 2
+Translation: tw two
+> 3
+Translation: th
+> 4
+Translation: fo
+> 5
+Translation: fivt
+> 6
+Translation: si
+> 7
+Translation: sseven
+> 8
+Translation: eigght
+> 9
+Translation: nin
+> 10
+Translation: onne
+> 11
+Translation:
+> 12
+Translation:
+> 65
+Translation: sixty six
+> 66
+Translation: sixt
+> 48
+Translation: ffo ty
+> 49
+Translation: ffffo ty
+> 50
+Translation: fift
+> 99
+Translation: ninet
+> 56
+Translation: fifty
+> 19
+Translation:
+> 75
+Translation: seven
+>
