@@ -1,0 +1,35 @@
+(inline-completion-model) ➜  seq2seq git:(main) ✗ prunp number_translator2.py
+Epoch 0, Loss: 4.0619
+Epoch 10, Loss: 2.4778
+Epoch 20, Loss: 2.0709
+Epoch 30, Loss: 1.7045
+Epoch 40, Loss: 1.2578
+Epoch 50, Loss: 0.8693
+Epoch 60, Loss: 0.5502
+Epoch 70, Loss: 0.3527
+Epoch 80, Loss: 0.2792
+Epoch 90, Loss: 0.1643
+Epoch 100, Loss: 0.0914
+Epoch 110, Loss: 0.0658
+Epoch 120, Loss: 0.0515
+Epoch 130, Loss: 0.0301
+Epoch 140, Loss: 0.0241
+Epoch 150, Loss: 0.0204
+Epoch 160, Loss: 0.0165
+Epoch 170, Loss: 0.0140
+Epoch 180, Loss: 0.0117
+Epoch 190, Loss: 0.0106
+Model saved to numeral_translator.pth
+Traceback (most recent call last):
+  File "/home/xlisp/Desktop/inline-completion-model/seq2seq/number_translator2.py", line 292, in <module>
+    translator = main()
+                 ^^^^^^
+  File "/home/xlisp/Desktop/inline-completion-model/seq2seq/number_translator2.py", line 286, in main
+    translation = translator.translate(num)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/xlisp/Desktop/inline-completion-model/seq2seq/number_translator2.py", line 233, in translate
+    predicted_chars = [self.output_idx_to_char[idx.item()] for idx in predicted_indices[0]]
+                                                                      ~~~~~~~~~~~~~~~~~^^^
+IndexError: invalid index of a 0-dim tensor. Use `tensor.item()` in Python or `tensor.item<T>()` in C++ to convert a 0-dim tensor to a number
+(inline-completion-model) ➜  seq2seq git:(main) ✗ 
+
