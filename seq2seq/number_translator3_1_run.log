@@ -92,3 +92,88 @@ Translation:
 > 75
 Translation: seven
 >
+
+## ----- gpu --- and 10000 data
+
+(inline-completion-model) ➜  inline-completion-model git:(main) ✗ prunp seq2seq/number_translator3_1.py
+Using device: cuda
+Training model...
+Input characters: [' ', "'", ',', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '[', ']']
+Output characters: [' ', 'e', 'f', 'g', 'h', 'i', 'l', 'n', 'o', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
+Epoch 0, Loss: 0.5285
+Epoch 10, Loss: 0.0226
+Epoch 20, Loss: 0.0227
+Epoch 30, Loss: 0.0219
+Epoch 40, Loss: 0.0217
+Epoch 50, Loss: 0.0218
+Epoch 60, Loss: 0.0216
+Epoch 70, Loss: 0.0233
+Epoch 80, Loss: 0.0217
+Epoch 90, Loss: 0.0223
+Model saved to numeral_translator.pth
+
+Testing translations:
+0 -> zer
+5 -> ivt
+13 -> iine
+25 -> tour
+42 -> four
+67 -> ine ss
+89 -> n
+99 ->
+
+Enter a number (0-99) to translate or 'q' to quit:
+> 1
+Translation: on
+> 2
+Translation: two
+> 3
+Translation: iighthr
+> 4
+Translation: our
+> 5
+Translation: ivfive
+> 6
+Translation: siix
+> 7
+Translation: seeeeveen
+> 8
+Translation: eight
+> 9
+Translation: n n
+> 10
+Translation: toen
+> 11
+Translation:
+> 12
+Translation: t
+> 13
+Translation: one
+> 14
+Translation: oouree
+> 15
+Translation: iiiiine
+> 16
+Translation:
+> 17
+Translation: sevent
+> 18
+Translation: oone
+> 19
+Translation:
+> 20
+Translation: twont
+> 52
+Translation: int
+> 46
+Translation: ffour
+> 43
+Translation: four
+> 99
+Translation: n
+> 94
+Translation: n  ni
+> 81
+Translation: eeo
+>
+
